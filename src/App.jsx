@@ -83,15 +83,15 @@ export default function App() {
     { 
       title: 'Smile Laundry',  
       images: ['/smile laundry 1.png', '/smile laundry 2.png', '/smile laundry 3.png'],
-      fullDesc: 'Smile Laundry dirancang untuk memudahkan hidup kamu dalam memesan layanan cuci kiloan sampai satuan. Dilengkapi sistem multi-aktor, pantauan saldo, hingga tracking pesanan secara real-time langsung dari genggaman.',
+      fullDesc: 'Smile Laundry adalah aplikasi pemesanan layanan laundry yang saya kembangkan untuk memberikan pengalaman mencuci yang lebih praktis dan efisien. Aplikasi ini dilengkapi dengan sistem multi-aktor, pengelolaan saldo, serta fitur pelacakan pesanan secara real-time, sehingga pengguna dapat memesan layanan dan memantau proses laundry dengan lebih mudah dalam satu aplikasi.',
       tech: ['Flutter', 'Laravel REST API', 'Firebase FCM', 'Midtrans', 'Haversine'],
       siteUrl: null
     },
     { 
       title: 'Space Outdoor', 
       images: ['/spaceoutdoor 1.png', '/spaceoutdoor 2.png', '/spaceoutdoor 3.png'],
-      fullDesc: 'Space Outdoor adalah platform all-in-one buat kamu yang hobi nanjak dan petualangan alam terbuka. Mulai dari sewa perlengkapan camping sampai gabung open trip seru, semuanya bisa diatur di sini.',
-      tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+      fullDesc: 'Space Outdoor adalah website yang saya kembangkan untuk memudahkan para pecinta alam dalam menyewa perlengkapan pendakian dan camping. Pengguna dapat menjelajahi berbagai pilihan perlengkapan, melihat detail produk, serta menemukan peralatan yang sesuai dengan kebutuhan petualangan mereka, sehingga persiapan pendakian menjadi lebih praktis dan efisien.',
+      tech: ['React',  'PHP', 'Mysql'],
       siteUrl: 'http://spaceoutdoor.infinityfreeapp.com/' 
     },
     { 
@@ -104,15 +104,15 @@ export default function App() {
 { 
       title: 'Space Trip', 
       images: ['/spacetrip 1.png', '/spacetrip 2.png', '/spacetrip 3.png'],
-      fullDesc: 'Pernah bayangin liburan ke planet lain? Space Trip mewujudkannya lewat web app interaktif di mana kamu bisa jelajahi destinasi luar angkasa dan booking tiket penerbangannya dengan mudah.',
-      tech: ['React', 'Tailwind CSS', 'JavaScript'],
+      fullDesc: 'Space Trip adalah aplikasi website yang saya kembangkan untuk memudahkan pengguna menemukan berbagai pilihan perjalanan wisata di Indonesia. Melalui website ini, pengguna dapat melihat informasi destinasi, detail perjalanan, ketersediaan kuota peserta, serta informasi penting lainnya sebelum mendaftar trip, sehingga proses mencari dan merencanakan perjalanan menjadi lebih mudah dan praktis.',
+      tech: ['PHP', 'Tailwind CSS', 'JavaScript','Midtrans', 'MySQL'],
       siteUrl: 'https://spacetrip.infinityfreeapp.com/' // <-- Diperbarui dengan link website asli
     },
     { 
       title: 'Scorpion Production', 
       images: ['/spacetrip 2.png', '/spacetrip 1.png', '/spacetrip 3.png'],
-      fullDesc: 'Scorpion Production adalah solusi digital untuk menghandle event management, sewa alat multimedia, hingga showcase portofolio panggung yang keren dan profesional.',
-      tech: ['Laravel', 'Vue.js', 'MySQL', 'Tailwind CSS'],
+      fullDesc: 'Scorpion Production adalah website yang saya kembangkan untuk memperkenalkan karya dan aktivitas produksi film dari salah satu komunitas broadcasting Universitas Mercu Buana. Platform ini menjadi wadah untuk menampilkan portofolio film, mendokumentasikan hasil produksi, serta memberikan informasi mengenai proyek dan kegiatan kreatif yang dikerjakan oleh tim.',
+      tech: ['HTML', 'CSS', 'JS'],
       siteUrl: null
     }
   ];
@@ -141,10 +141,11 @@ export default function App() {
           
 
           <div className="hero-content-center">
-            <div className="hero-bg-name">
-              <span className="name-line">MUHAMAD</span>
-              <span className="name-line">FARID RIVAI</span>
-            </div>
+           {/* GANTI ATAU TAMBAHKAN DI DALAM HERO SECTION */}
+<div className="hero-images-fade-container">
+  <img src="/gambar 1.png" alt="Hero Left" className="hero-fade-img hero-img-left" />
+  <img src="/gambar 2.png" alt="Hero Right" className="hero-fade-img hero-img-right" />
+</div>
           </div>
         </section>
 
