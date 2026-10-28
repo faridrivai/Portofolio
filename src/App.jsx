@@ -143,7 +143,7 @@ export default function App() {
           <div className="hero-content-center">
             <div className="hero-bg-name">
               <span className="name-line">MUHAMAD</span>
-              <span className="name-line">FARID__RIVAI</span>
+              <span className="name-line">FARID RIVAI</span>
             </div>
           </div>
         </section>
@@ -305,7 +305,7 @@ Aktif sejak 2023, saya senang mengeksplorasi ide-ide kreatif dan menuangkannya k
           </div>
         </section>
 
-        {/* 4. CONTACT SECTION (PUTIH, JUDUL KIRI ATAS, KOTAK SOSIAL & KONTAK SEBELAHAN) */}
+        {/* 4. CONTACT SECTION */}
         <section className="contact-section white-contact-bg" id="contact">
           <div className="content-wrapper contact-wrapper-relative">
             
@@ -320,18 +320,15 @@ Aktif sejak 2023, saya senang mengeksplorasi ide-ide kreatif dan menuangkannya k
               {/* KOTAK KIRI: Find Me (LinkedIn, Instagram, TikTok) */}
               <div className="contact-box social-box">
                 <h3 className="box-header-title">Find Me</h3>
-                <div className="social-links-list">
-                  <a href="https://www.linkedin.com/in/farid-rivai-433bb742b" target="_blank" rel="noreferrer" className="social-box-item">
+                <div className="social-icons-only-list">
+                  <a href="https://www.linkedin.com/in/farid-rivai-433bb742b" target="_blank" rel="noreferrer" className="contact-icon-btn" aria-label="LinkedIn">
                     <i className="fab fa-linkedin-in"></i>
-                    <span>LinkedIn</span>
                   </a>
-                  <a href="https://instagram.com/faridrivaii" target="_blank" rel="noreferrer" className="social-box-item">
+                  <a href="https://instagram.com/faridrivaii" target="_blank" rel="noreferrer" className="contact-icon-btn" aria-label="Instagram">
                     <i className="fab fa-instagram"></i>
-                    <span>Instagram</span>
                   </a>
-                  <a href="https://tiktok.com" target="_blank" rel="noreferrer" className="social-box-item">
+                  <a href="https://tiktok.com" target="_blank" rel="noreferrer" className="contact-icon-btn" aria-label="TikTok">
                     <i className="fab fa-tiktok"></i>
-                    <span>TikTok</span>
                   </a>
                 </div>
               </div>
@@ -339,20 +336,12 @@ Aktif sejak 2023, saya senang mengeksplorasi ide-ide kreatif dan menuangkannya k
               {/* KOTAK KANAN: Email & WhatsApp */}
               <div className="contact-box direct-box">
                 <h3 className="box-header-title">Get in Touch</h3>
-                <div className="direct-links-list">
-                  <a href="mailto:faridrivai16@gmail.com" className="direct-tile">
+                <div className="social-icons-only-list">
+                  <a href="mailto:faridrivai16@gmail.com" className="contact-icon-btn" aria-label="Email">
                     <i className="far fa-envelope"></i>
-                    <div>
-                      <span>Kirim Email</span>
-                      <strong>faridrivai16@gmail.com</strong>
-                    </div>
                   </a>
-                  <a href="https://wa.me/6285798865352" target="_blank" rel="noreferrer" className="direct-tile">
+                  <a href="https://wa.me/6285798865352" target="_blank" rel="noreferrer" className="contact-icon-btn" aria-label="WhatsApp">
                     <i className="fab fa-whatsapp"></i>
-                    <div>
-                      <span>WhatsApp</span>
-                      <strong>+62 857-9886-5352</strong>
-                    </div>
                   </a>
                 </div>
               </div>

@@ -180,7 +180,11 @@ body {
 }
 
 .dock-link:hover {
-    color: #2563eb;
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 
+                 0 0 20px rgba(255, 255, 255, 0.6), 
+                 0 0 30px rgba(255, 255, 255, 0.4) !important;
+    transition: all 0.3s ease-in-out;
 }
 
 .top-right-contact-btn {
@@ -722,8 +726,56 @@ body {
     position: relative;
     z-index: 25;
     width: 100%;
-    overflow: hidden;
+    min-height: 100vh; /* Memastikan tinggi section minimal 100% layar agar background hitam tertutup sepenuhnya */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
 }
+
+/* Jarak Ikon di Desktop */
+.social-icons-only-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; /* Memberi jarak lebih lebar & tidak dempet di desktop */
+    align-items: center;
+    margin-top: 8px;
+}
+
+/* ==========================================
+   WARNA IKON SESUAI ASLINYA (DESKTOP & MOBILE)
+   ========================================== */
+
+.contact-icon-btn {
+    width: 58px;
+    height: 58px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Memastikan warna asli ikon langsung tampil secara permanen */
+.contact-icon-btn .fa-linkedin-in { color: #0a66c2 !important; } /* Biru LinkedIn */
+.contact-icon-btn .fa-instagram { color: #e4405f !important; }  /* Pink Instagram */
+.contact-icon-btn .fa-tiktok { color: #000000 !important; }      /* Hitam TikTok */
+.contact-icon-btn .fa-envelope { color: #ea4335 !important; }    /* Merah Email */
+.contact-icon-btn .fa-whatsapp { color: #25d366 !important; }    /* Hijau WhatsApp */
+
+/* Efek Hover: Kartu naik dan latar belakang berubah lembut tanpa menghilangkan warna asli ikon */
+.contact-icon-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
 
 /* Judul Kiri Atas */
 .section-title.text-left {
@@ -879,19 +931,22 @@ body {
 /* Foto Nelpon di Pojok Kanan Bawah */
 .contact-phone-photo-container {
     position: absolute;
-    right: 0;
-    bottom: -30px;
-    height: 600px;
+    right: 1%;
+    bottom: 0;
+    height: 90%; /* Menyesuaikan tinggi foto dengan proporsi section */
+    max-height: 650px;
     pointer-events: none;
-    z-index: 10;
+    z-index: 30;
     display: flex;
     align-items: flex-end;
 }
 
 .contact-phone-photo {
     height: 100%;
+    width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+    object-position: bottom right;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.12));
 }
 
 /* Responsif Mobile */
@@ -1519,4 +1574,321 @@ body {
         font-size: 2.1rem;
         letter-spacing: 2px;
     }
+}
+/* ==========================================
+   PERBAIKAN FOTO WISUDA AGAR TIDAK TERPOTONG (MOBILE)
+   ========================================== */
+@media (max-width: 992px) {
+    /* Menyesuaikan tinggi kontainer foto di HP agar proporsional */
+    .about-photo-card {
+        width: 100%;
+        height: auto; /* Tinggi menyesuaikan gambar asli */
+        max-height: 450px; /* Batasi tinggi maksimum di layar HP */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent !important;
+    }
+
+    .about-graduation-photo {
+        width: 100%;
+        height: 100%;
+        max-height: 450px;
+        object-fit: contain !important; /* Mengubah dari cover ke contain agar sisi kanan-kiri tidak terpotong */
+        object-position: center center;
+        border-radius: 20px;
+    }
+}
+/* ==========================================
+   PERBAIKAN TATA LETAK IKON SKILLS (AGAR RAPI & KONSISTEN)
+   ========================================== */
+.skill-icons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Jarak antar badge ikon diseragamkan */
+    align-items: center;
+}
+
+/* Menyeragamkan ukuran dan bentuk semua kotak ikon (baik FontAwesome maupun Custom Image Badge) */
+.skill-icons-grid i,
+.skill-custom-img-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.15rem;
+    background: #f8fafc;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    transition: all 0.3s ease;
+    height: 40px; /* Menyamakan tinggi setiap kotak ikon */
+    box-sizing: border-box;
+}
+
+/* Menyamakan ukuran gambar kustom (Flutter, Dart, Postman, Firebase) */
+.skill-custom-img-badge img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Menyamakan ukuran teks di dalam badge ikon */
+.skill-icons-grid i span,
+.skill-custom-img-badge span {
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+    color: #1e293b;
+    white-space: nowrap; /* Mencegah teks terpotong ke bawah */
+}
+
+/* Penyesuaian khusus untuk tampilan layar HP (Mobile) */
+@media (max-width: 768px) {
+    .skill-box {
+        padding: 18px; /* Mengurangi padding box di HP agar tidak terlalu memakan tempat */
+        border-radius: 20px;
+    }
+
+    .skill-icons-grid {
+        gap: 8px; /* Jarak antar ikon sedikit lebih rapat di HP */
+    }
+
+    .skill-icons-grid i,
+    .skill-custom-img-badge {
+        padding: 6px 10px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .skill-icons-grid i span,
+    .skill-custom-img-badge span {
+        font-size: 0.78rem;
+    }
+}
+/* ==========================================
+   PERBAIKAN POP-UP MODAL BIODATA (RESPONSIF MOBILE)
+   ========================================== */
+
+/* Pastikan Overlay Modal Pas di Layar HP */
+.bio-modal-overlay {
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mengatur Ulang Kartu Modal agar Konten Bisa Di-scroll dengan Halus di HP */
+.bio-modal-card {
+    max-height: 85vh; /* Batasi tinggi maksimum modal 85% dari tinggi layar */
+    overflow-y: auto !important; /* Biarkan konten di-scroll jika melebihi layar */
+    -webkit-overflow-scrolling: touch;
+    padding: 24px 20px;
+    border-radius: 20px;
+}
+
+/* Menyembunyikan Scrollbar Modal tapi Tetap Bisa Di-scroll */
+.bio-modal-card::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+}
+
+@media (max-width: 600px) {
+    .bio-modal-card {
+        width: 95vw;
+        padding: 20px 16px;
+    }
+
+    .bio-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    /* Grid Info Utama (Nama, TTL, Alamat, Umur) Menjadi 1 Kolom */
+    .bio-info-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .bio-info-box {
+        padding: 10px 14px;
+        border-radius: 12px;
+    }
+
+    .bio-label {
+        font-size: 0.68rem;
+    }
+
+    .bio-value {
+        font-size: 0.88rem;
+    }
+
+    /* Riwayat Pendidikan Rapi Secara Vertikal */
+    .bio-education-list {
+        gap: 8px;
+    }
+
+    .edu-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 10px 12px;
+        border-radius: 12px;
+    }
+
+    .edu-year {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+
+    .edu-details h5 {
+        font-size: 0.88rem;
+    }
+
+    .edu-details p {
+        font-size: 0.78rem;
+    }
+
+    /* Hobi Chips */
+    .hobby-chip {
+        padding: 5px 12px;
+        font-size: 0.78rem;
+    }
+
+    /* Tombol Close Disesuaikan */
+    .bio-close-btn {
+        top: 15px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+/* ==========================================
+   PERBAIKAN CONTACT SECTION MOBILE (KOTAK SETENGAH & TAMPILKAN FOTO)
+   ========================================== */
+@media (max-width: 992px) {
+    .contact-section.white-contact-bg {
+        padding: 60px 5% 80px 5%;
+        overflow: visible;
+    }
+
+    /* Container utama di mobile dibuat lebih ringkas */
+    .contact-cards-layout {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        width: 65%; /* Membuat lebar container menjadi sekitar setengah layar */
+        max-width: 320px;
+        margin: 0; /* Tetap berada di sisi kiri selaras dengan judul */
+    }
+
+    .contact-box {
+        padding: 18px 20px;
+        border-radius: 18px;
+    }
+
+    .box-header-title {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+
+.social-icons-only-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Diperbesar dari 15px ke 20px */
+    align-items: center;
+    margin-top: 5px;
+}
+
+    /* ==========================================
+   WARNA IKON ASLI PADA CONTACT SECTION
+   ========================================== */
+
+/* Warna Default Ikon */
+.contact-icon-btn {
+    width: 55px;
+    height: 55px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Warna Asli per Jenis Ikon saat Disorot (Hover) atau Normal */
+.contact-icon-btn .fa-linkedin-in { color: #0a66c2; } /* Biru LinkedIn */
+.contact-icon-btn .fa-instagram { color: #e4405f; }  /* Pink/Gradasi Instagram */
+.contact-icon-btn .fa-tiktok { color: #000000; }      /* Hitam TikTok */
+.contact-icon-btn .fa-envelope { color: #ea4335; }    /* Merah Email */
+.contact-icon-btn .fa-whatsapp { color: #25d366; }    /* Hijau WhatsApp */
+
+/* Efek Hover: Kartu berubah latar belakang sedikit, ikon tetap warna asli atau menyala */
+.contact-icon-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsif Mobile */
+@media (max-width: 992px) {
+    .contact-icon-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+    }
+}
+
+    /* MENAMPILKAN DAN MENYESUAIKAN FOTO NELPON DI MOBILE */
+    .contact-phone-photo-container {
+        display: flex !important; /* Memaksa foto tetap tampil di layar mobile */
+        position: absolute;
+        right: -10px; /* Diposisikan di sebelah kanan container kontak */
+        bottom: 0px;
+        height: 280px; /* Sesuaikan tinggi foto di mobile */
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .contact-phone-photo {
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom right;
+        filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.15));
+    }
+}
+
+@media (max-width: 480px) {
+    /* Penyesuaian khusus HP layar sangat kecil (misal iPhone SE / Android kecil) */
+    .contact-cards-layout {
+        width: 60%;
+        max-width: 260px;
+    }
+
+    .contact-phone-photo-container {
+        height: 240px;
+        right: -15px;
+    }
+}
+
+/* ==========================================
+   PENYARAGAMAN FONT TOMBOL BIODATA KUNJUNGI SITUS
+   ========================================== */
+
+/* Menyamakan font, huruf kapital, dan gaya tulisan tombol Lihat Biodata */
+.bio-btn,
+.btn-bio,
+.see-bio-btn {
+    font-family: inherit !important; /* Mengikuti font family yang sama dengan tombol Kunjungi Situs */
+    font-weight: 700 !important;
+    text-transform: uppercase !important; /* Membuat teks huruf besar/kapital jika tombol Kunjungi Situs menggunakannya */
+    letter-spacing: 0.5px !important;
 }
