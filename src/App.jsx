@@ -110,10 +110,10 @@ export default function App() {
     },
     { 
       title: 'Scorpion Production', 
-      images: ['/spacetrip 2.png', '/spacetrip 1.png', '/spacetrip 3.png'],
+      images: ['/scorpion 1.png', '/scorpion 2.png', '/scorpion 3.png'],
       fullDesc: 'Scorpion Production adalah website yang saya kembangkan untuk memperkenalkan karya dan aktivitas produksi film dari salah satu komunitas broadcasting Universitas Mercu Buana. Platform ini menjadi wadah untuk menampilkan portofolio film, mendokumentasikan hasil produksi, serta memberikan informasi mengenai proyek dan kegiatan kreatif yang dikerjakan oleh tim.',
       tech: ['HTML', 'CSS', 'JS'],
-      siteUrl: null
+      siteUrl: 'https://scorpio-productions.vercel.app/'
     }
   ];
 
