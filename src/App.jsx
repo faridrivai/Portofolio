@@ -109,9 +109,9 @@ export default function App() {
       siteUrl: 'https://spacetrip.infinityfreeapp.com/' // <-- Diperbarui dengan link website asli
     },
     { 
-      title: 'Scorpion Production', 
-      images: ['/scorpion 1.png', '/scorpion 2.png', '/scorpion 3.png'],
-      fullDesc: 'Scorpion Production adalah website yang saya kembangkan untuk memperkenalkan karya dan aktivitas produksi film dari salah satu komunitas broadcasting Universitas Mercu Buana. Platform ini menjadi wadah untuk menampilkan portofolio film, mendokumentasikan hasil produksi, serta memberikan informasi mengenai proyek dan kegiatan kreatif yang dikerjakan oleh tim.',
+      title: 'Scorpio Production', 
+      images: ['/scorpio 1.png', '/scorpio 2.png', '/scorpio 3.png'],
+      fullDesc: 'Scorpio Production adalah website yang saya kembangkan untuk memperkenalkan karya dan aktivitas produksi film dari salah satu komunitas broadcasting Universitas Mercu Buana. Platform ini menjadi wadah untuk menampilkan portofolio film, mendokumentasikan hasil produksi, serta memberikan informasi mengenai proyek dan kegiatan kreatif yang dikerjakan oleh tim.',
       tech: ['HTML', 'CSS', 'JS'],
       siteUrl: 'https://scorpio-productions.vercel.app/'
     }
